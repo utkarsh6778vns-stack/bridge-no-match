@@ -9,21 +9,16 @@ import { BottomTabBar } from '../components/Community/BottomTabBar';
 const DUMMY_MATCHES = [
     {
         id: '1',
-        status: 'awaiting_them' as MatchStatus,
+        status: 'new_match' as MatchStatus,
         name: 'Brooklyn',
         age: 26,
         expiresIn: undefined,
         matchDate: 'Sep 14, 2026',
         imageUrl:
             'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=800',
-        matchedByAvatars: [
-            'https://randomuser.me/api/portraits/men/32.jpg',
-            'https://randomuser.me/api/portraits/women/44.jpg',
-            'https://randomuser.me/api/portraits/men/46.jpg',
-        ],
+        matchedByAvatars: [],
         theyVotedYes: false,
-        youVotedYes: true,
-        expiresXHours: 'Expires 12 hours',
+        youVotedYes: false,
     },
 ];
 
@@ -38,12 +33,12 @@ export default function MatchesScreen() {
             <View style={{ height: 16 }} />
 
             {/* Header — pushed down from the status bar area */}
-            <View style={{ paddingTop: 20, paddingHorizontal: 16, paddingBottom: 12 }}>
+            <View style={{ paddingTop: 20, paddingHorizontal: 16, paddingBottom: 24 }}>
                 <Text
                     style={{
                         fontFamily: 'Outfit_600SemiBold',
-                        fontSize: 22,
-                        lineHeight: 28,
+                        fontSize: 28,
+                        lineHeight: 34,
                         color: '#010101',
                     }}
                 >
@@ -65,7 +60,6 @@ export default function MatchesScreen() {
                         matchedByAvatars={match.matchedByAvatars}
                         theyVotedYes={match.theyVotedYes}
                         youVotedYes={match.youVotedYes}
-                        expiresXHours={match.expiresXHours}
                         onPress={() => {
                             // TODO: navigate to vote/compatibility screen
                             console.log('Card pressed — navigate to vote screen');

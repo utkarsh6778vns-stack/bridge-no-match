@@ -1,28 +1,26 @@
-# Bridge - Awaiting Their Response
+# Bridge - Match Screen
 
-This is a pixel-perfect React Native (Expo) implementation of the "Awaiting Their Response" match screen for the Bridge application. This variant features dual status banners and updated iconography.
+This is a pixel-perfect React Native (Expo) implementation of the Match screen for the Bridge application. This variant features the "New match" status, updated layout, and premium aesthetics as per the latest design.
 
 ## 📱 Preview
 
-![Matched Screen](./design_screenshot.png)
+![Match Screen Design](./match_screen_design.png)
 
 ## 🚀 Tech Stack
 
 - **Framework**: [Expo](https://expo.dev/) (React Native)
-- **Styling**: [NativeWind](https://www.nativewind.dev/) (Tailwind CSS)
-- **Typography**: [Outfit](https://fonts.google.com/specimen/Outfit) & [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
-- **Icons**: Custom SVG icons (Vuesax/Lovely inspired overlapping hearts)
+- **Styling**: [NativeWind](https://www.nativewind.dev/) (Tailwind CSS) & Vanilla CSS
+- **Typography**: [Outfit](https://fonts.google.com/specimen/Outfit)
+- **Icons**: Custom SVG icons
 - **Animations**: [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
 ## ✨ Features
 
-- **"Awaiting Their Response" State**: Specialized UI for when the user is waiting for a match's vote.
-- **Dual Status Banners**: 
-  - 🟢 "You votes yes" banner.
-  - 🟠 "You votes yes - Expires 12 hours" banner.
-- **Refined Iconography**: Custom overlapping teal hearts for the "Matched by" section.
-- **Premium Aesthetics**: Glassmorphism effects and sharp typography.
-- **Responsive Layout**: Handling of mobile status bars and navigation items.
+- **"New match" State**: Specialized UI with a semi-transparent badge and clean layout.
+- **Pixel-Perfect Styling**: Precise implementation of border radius, spacing, and typography to match the design.
+- **Action Button**: Standardized white circular action button with a directional arrow.
+- **Premium Aesthetics**: Smooth gradients and high-quality image handling.
+- **Responsive Navigation**: Bottom tab bar with active state indicators.
 
 ## 🛠️ Getting Started
 
@@ -43,9 +41,10 @@ This is a pixel-perfect React Native (Expo) implementation of the "Awaiting Thei
 
 ## 📂 Project Structure
 
-- `src/components/matches/MatchCard.tsx`: Handles both "Awaiting Your Response" and "Awaiting Their Response" UI variants.
-- `src/screens/MatchesScreen.tsx`: Manages the screen layout and mock match data.
-- `src/components/Icons/Icons.tsx`: Custom SVG components including the new `HeartsIcon` and `QuestionIcon`.
+- `src/components/matches/MatchCard.tsx`: The core component handling match card UI variants.
+- `src/screens/MatchesScreen.tsx`: Manages the screen layout and match data.
+- `src/components/Icons/Icons.tsx`: Custom SVG icon components.
+- `src/components/Community/BottomTabBar.tsx`: Custom bottom navigation bar.
 
 ---
 Created with ❤️ by Antigravity

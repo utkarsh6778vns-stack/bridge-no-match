@@ -15,7 +15,7 @@ export type MatchStatus =
 
 const STATUS_CONFIG: Record<
     MatchStatus,
-    { label: string; topBgColor?: string; bottomBgColor?: string; Icon: React.FC<any> }
+    { label: string; topBgColor?: string; bottomBgColor?: string; Icon?: React.FC<any> }
 > = {
     active_match: {
         label: 'Active match',
@@ -41,8 +41,8 @@ const STATUS_CONFIG: Record<
     },
     new_match: {
         label: 'New match',
-        topBgColor: '#2B65F9',
-        Icon: CheckmarkIcon,
+        topBgColor: 'rgba(255, 255, 255, 0.2)',
+        bottomBgColor: undefined,
     },
 };
 
@@ -110,7 +110,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({
                     <View style={styles.topRow}>
                         {config.topBgColor && (
                             <View style={[styles.statusBadge, { backgroundColor: config.topBgColor }]}>
-                                <config.Icon size={18} color="#FFF" />
+                                {config.Icon && <config.Icon size={18} color="#FFF" />}
                                 <Text style={styles.statusBadgeText}>
                                     {config.label}
                                 </Text>
@@ -158,28 +158,10 @@ export const MatchCard: React.FC<MatchCardProps> = ({
                                 {name}, {age}
                             </Text>
 
-                            {matchedByAvatars.length > 0 && (
-                                <View style={styles.matchedByRow}>
-                                    <HeartsIcon size={22} color="#00C8B3" />
-                                    <Text style={styles.matchedByText}>Matched by :</Text>
-                                    <View style={styles.avatarRow}>
-                                        {matchedByAvatars.map((avatar, idx) => (
-                                            <View key={idx} style={[styles.avatarCircle, { marginLeft: idx > 0 ? -6 : 0 }]}>
-                                                <ImageBackground
-                                                    source={{ uri: avatar }}
-                                                    style={{ width: '100%', height: '100%' }}
-                                                    imageStyle={{ borderRadius: 11 }}
-                                                />
-                                            </View>
-                                        ))}
-                                    </View>
-                                </View>
-                            )}
-
                             {isAwaitingYou && expiresIn ? (
                                 <Text style={styles.expiryText}>Expires in {expiresIn}</Text>
                             ) : matchDate ? (
-                                <Text style={styles.expiryText}>Matched {matchDate}</Text>
+                                <Text style={styles.expiryText}>{matchDate}</Text>
                             ) : null}
                         </View>
                     </View>
@@ -187,7 +169,7 @@ export const MatchCard: React.FC<MatchCardProps> = ({
             </ImageBackground>
 
             <TouchableOpacity onPress={onPress} style={styles.actionButton} activeOpacity={0.85}>
-                {(isAwaitingYou || isAwaitingThem) ? (
+                {(isAwaitingYou || isAwaitingThem || status === 'new_match') ? (
                     <ArrowRightIcon size={24} color="#010101" />
                 ) : (
                     <ChatIcon size={24} color="#2563EB" />
@@ -200,12 +182,12 @@ export const MatchCard: React.FC<MatchCardProps> = ({
 const styles = StyleSheet.create({
     card: {
         flex: 1,
-        borderRadius: 10,
+        borderRadius: 16,
         overflow: 'hidden',
         backgroundColor: '#000',
     },
     cardImage: {
-        borderRadius: 10,
+        borderRadius: 16,
     },
     cardInner: {
         flex: 1,
@@ -221,8 +203,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 8,
-        paddingHorizontal: 10,
-        paddingVertical: 6,
+        paddingHorizontal: 14,
+        paddingVertical: 8,
         gap: 6,
     },
     statusBadgeText: {
@@ -307,7 +289,7 @@ const styles = StyleSheet.create({
     },
     expiryText: {
         color: 'rgba(255, 255, 255, 0.7)',
-        fontFamily: 'Outfit_300Light',
+        fontFamily: 'Outfit_400Regular',
         fontSize: 14,
         lineHeight: 18,
     },
