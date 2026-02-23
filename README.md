@@ -1,26 +1,25 @@
-# Bridge - Match Screen
+# Bridge - No Match Screen
 
-This is a pixel-perfect React Native (Expo) implementation of the Match screen for the Bridge application. This variant features the "New match" status, updated layout, and premium aesthetics as per the latest design.
+This is a pixel-perfect React Native (Expo) implementation of the **No Match** empty state for the Bridge application. This screen features a warm, minimalist illustration, a comforting tagline, and a clear call-to-action to help others in the community.
 
 ## 📱 Preview
 
-![Match Screen Design](./match_screen_design.png)
+![No Match Screen](./bridge_no_match_preview.png)
 
 ## 🚀 Tech Stack
 
 - **Framework**: [Expo](https://expo.dev/) (React Native)
-- **Styling**: [NativeWind](https://www.nativewind.dev/) (Tailwind CSS) & Vanilla CSS
+- **Styling**: Vanilla React Native StyleSheet
 - **Typography**: [Outfit](https://fonts.google.com/specimen/Outfit)
-- **Icons**: Custom SVG icons
-- **Animations**: [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
+- **Design Pattern**: Fully centered empty-state layout
 
 ## ✨ Features
 
-- **"New match" State**: Specialized UI with a semi-transparent badge and clean layout.
-- **Pixel-Perfect Styling**: Precise implementation of border radius, spacing, and typography to match the design.
-- **Action Button**: Standardized white circular action button with a directional arrow.
-- **Premium Aesthetics**: Smooth gradients and high-quality image handling.
-- **Responsive Navigation**: Bottom tab bar with active state indicators.
+- **"No Match" Empty State**: Specialized UI to handle cases where no matches are currently available.
+- **Custom Illustration**: Chaming minimalist doodle style (saved in `assets/no_match_illustration.png`).
+- **Clear Call-to-Action**: "Help others find their match" button to encourage user engagement.
+- **Perfect Spacing**: Implemented with precise Figma-derived gaps (80px header, 173px container top).
+- **Premium Aesthetics**: Clean white background with high-quality typography.
 
 ## 🛠️ Getting Started
 
@@ -41,10 +40,10 @@ This is a pixel-perfect React Native (Expo) implementation of the Match screen f
 
 ## 📂 Project Structure
 
-- `src/components/matches/MatchCard.tsx`: The core component handling match card UI variants.
-- `src/screens/MatchesScreen.tsx`: Manages the screen layout and match data.
+- `src/screens/MatchesScreen.tsx`: The main screen implementing the "No Match" layout.
 - `src/components/Icons/Icons.tsx`: Custom SVG icon components.
 - `src/components/Community/BottomTabBar.tsx`: Custom bottom navigation bar.
+- `assets/no_match_illustration.png`: The illustration used on the empty state.
 
 ---
 Created with ❤️ by Antigravity
