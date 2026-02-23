@@ -4,7 +4,7 @@ This is a pixel-perfect React Native (Expo) implementation of the **No Match** e
 
 ## 📱 Preview
 
-![No Match Screen](Match (1).png)
+![No Match Screen]Match (1).png
 
 ## 🚀 Tech Stack
 
