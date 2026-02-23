@@ -1,44 +1,49 @@
-# Bridge Active Match
+# Bridge - Awaiting Your Response
 
-A premium, pixel-perfect React Native (Expo) implementation of the "Active Match" screen for the Bridge dating application.
+This is a pixel-perfect React Native (Expo) implementation of the "Awaiting Your Response" match screen for the Bridge application.
 
-## 🚀 Overview
+## 📱 Preview
 
-This project features a highly responsive, flex-box-driven Match Screen that includes dynamic status badges, custom SVG icons, and a premium design aesthetic matched exactly from Figma specifications.
+![Design Screenshot](./design_screenshot.png)
 
-### Key Features:
-- **Responsive Layout**: Adjusts to various mobile device sizes with proper status bar spacing.
-- **Dynamic Match Cards**: Reusable `MatchCard` component with multi-status support (Active, Awaiting, etc.).
-- **Custom Icons**: Bespoke SVG implementations of the Hearts and Chat Action buttons.
-- **Premium Aesthetics**: Integrated `expo-linear-gradient` for high-quality visual overlays.
+## 🚀 Tech Stack
 
-## 📸 Design Screenshot
+- **Framework**: [Expo](https://expo.dev/) (React Native)
+- **Styling**: [NativeWind](https://www.nativewind.dev/) (Tailwind CSS)
+- **Typography**: [Outfit](https://fonts.google.com/specimen/Outfit) & [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
+- **Icons**: Custom SVG icons (Lucide-inspired)
+- **Animations**: [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
-![Active Match Design](./design_screenshot.png)
+## ✨ Features
 
-## 🛠 Tech Stack
+- **Pixel-Perfect UI**: Matches Figma design exactly, including typography, spacing, and colors.
+- **Premium Aesthetics**: Glassmorphism effects, smooth gradients, and curated color palettes.
+- **Backend Ready**: Clean separation of concerns with mock data that can be easily replaced by API calls.
+- **Responsive Layout**: Optimized for various mobile screen sizes with proper status bar handling.
 
-- **Framework**: [Expo](https://expo.dev/) / [React Native](https://reactnative.dev/)
-- **Styling**: [NativeWind](https://www.nativewind.dev/) (Tailwind CSS for React Native)
-- **Icons**: Custom SVG + Lucide React Native
-- **Typography**: Outfit (Google Fonts)
+## 🛠️ Getting Started
 
-## 🏃‍♂️ Getting Started
-
-1. **Install Dependencies**:
+1. **Install dependencies**:
    ```bash
-   npm install --legacy-peer-deps
+   npm install
    ```
 
-2. **Run Locally**:
+2. **Run the development server**:
    ```bash
-   npm run web
+   npm run start
    ```
 
-3. **Development Commands**:
-   - `npm start`: Start the Expo server.
-   - `npm run ios`: Run on iOS simulator.
-   - `npm run android`: Run on Android emulator.
+3. **Open the project**:
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Press `w` for web browser
+
+## 📂 Project Structure
+
+- `src/components/matches/MatchCard.tsx`: The main card component with all the premium styling.
+- `src/screens/MatchesScreen.tsx`: Container screen handling the layout and data flow.
+- `src/theme/colors.ts`: Centralized color tokens.
+- `src/components/Icons/Icons.tsx`: Custom SVG icons used throughout the app.
 
 ---
-Built with ❤️ by Bridge Team
+Created with ❤️ by Antigravity

@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import {
   useFonts,
+  Outfit_300Light,
   Outfit_400Regular,
   Outfit_500Medium,
   Outfit_600SemiBold,
@@ -24,6 +25,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
+    Outfit_300Light,
     Outfit_400Regular,
     Outfit_500Medium,
     Outfit_600SemiBold,

@@ -1,5 +1,5 @@
 import React from 'react';
-import Svg, { Path, Circle, Ellipse, G } from 'react-native-svg';
+import Svg, { Path, Circle, G, Rect } from 'react-native-svg';
 
 interface IconProps {
     size?: number;
@@ -7,8 +7,7 @@ interface IconProps {
 }
 
 /**
- * mingcute:fire-fill — exact path from Iconify
- * Used for the streak flame indicator beside each user
+ * mingcute:fire-fill
  */
 export const FireIcon: React.FC<IconProps> = ({ size = 13, color = '#2563EB' }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
@@ -17,8 +16,7 @@ export const FireIcon: React.FC<IconProps> = ({ size = 13, color = '#2563EB' }) 
 );
 
 /**
- * solar:star-line-duotone (outline star) — exact path from design
- * Used for the "80 pts" badge on already-helped users
+ * solar:star-line-duotone
  */
 export const StarIcon: React.FC<IconProps> = ({ size = 13, color = '#34C759' }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
@@ -31,8 +29,7 @@ export const StarIcon: React.FC<IconProps> = ({ size = 13, color = '#34C759' }) 
 );
 
 /**
- * ph:users-three-fill — 3 people group icon exactly matching the design image
- * Used as the Community tab icon (active, blue)
+ * ph:users-three-fill — Community tab icon
  */
 export const UsersTabIcon: React.FC<IconProps> = ({ size = 24, color = '#2563EB' }) => (
     <Svg width={size} height={size} viewBox="0 0 256 256" fill={color}>
@@ -41,8 +38,7 @@ export const UsersTabIcon: React.FC<IconProps> = ({ size = 24, color = '#2563EB'
 );
 
 /**
- * fluent:handshake-32-filled — exact paths from Iconify
- * Used for the Help/Handshake tab icon (inactive, grey)
+ * fluent:handshake-32-filled — Match/Handshake tab icon
  */
 export const HandshakeTabIcon: React.FC<IconProps> = ({ size = 24, color = '#8D8D8D' }) => (
     <Svg width={size} height={size} viewBox="0 0 32 32">
@@ -54,24 +50,13 @@ export const HandshakeTabIcon: React.FC<IconProps> = ({ size = 24, color = '#8D8
 );
 
 /**
- * Hexagon (6 sides) with user/person silhouette inside
- * Matches vuesax/bold/user-octagon style from the Figma design image
+ * Hexagon profile tab icon
  */
 export const ProfileTabIcon: React.FC<IconProps> = ({ size = 24, color = '#8D8D8D' }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24">
-        {/* Hexagon outline — 6 equal sides, pointed top */}
-        {/* Solid hexagon background */}
-        <Path
-            fill={color}
-            d="M12 2L4.268 6.5v9L12 20l7.732-4.5v-9L12 2z"
-        />
-        {/* Person head — white so it reads over the filled hexagon */}
+        <Path fill={color} d="M12 2L4.268 6.5v9L12 20l7.732-4.5v-9L12 2z" />
         <Circle cx="12" cy="9.5" r="2.3" fill="white" />
-        {/* Person body — white */}
-        <Path
-            fill="white"
-            d="M12 13c-2.76 0-4.5.93-4.5 2.08V15.5h9v-.42C16.5 13.93 14.76 13 12 13z"
-        />
+        <Path fill="white" d="M12 13c-2.76 0-4.5.93-4.5 2.08V15.5h9v-.42C16.5 13.93 14.76 13 12 13z" />
     </Svg>
 );
 
@@ -81,9 +66,43 @@ export const CheckmarkIcon: React.FC<IconProps> = ({ size = 16, color = '#FFFFFF
     </Svg>
 );
 
+/**
+ * Hourglass icon — replaces ClockIcon for awaiting states
+ * Matches the hourglass/timer icon in the "Awaiting your response" design
+ */
+export const HourglassIcon: React.FC<IconProps> = ({ size = 16, color = '#FFFFFF' }) => (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <Path
+            d="M5 2h14M5 22h14M6 2v5l5 5-5 5v5M18 2v5l-5 5 5 5v5"
+            stroke={color}
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </Svg>
+);
+
+/**
+ * Legacy ClockIcon kept for backward compatibility
+ */
 export const ClockIcon: React.FC<IconProps> = ({ size = 16, color = '#FFFFFF' }) => (
     <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
         <Path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke={color} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+    </Svg>
+);
+
+/**
+ * Arrow right icon — used on the action button for the awaiting_you state
+ */
+export const ArrowRightIcon: React.FC<IconProps> = ({ size = 24, color = '#1C1C1E' }) => (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <Path
+            d="M5 12h14M13 6l6 6-6 6"
+            stroke={color}
+            strokeWidth={2.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
     </Svg>
 );
 
@@ -108,4 +127,3 @@ export const HeartsIcon: React.FC<IconProps> = ({ size = 24, color = '#00C8B3' }
         <Path d="M15.5 11c-1.74 0-3.41.81-4.5 2.09C9.91 11.81 8.24 11 6.5 11 3.42 11 1 13.42 1 16.5 1 20.28 4.4 23.36 9.55 28.04L11 29.35l1.45-1.32C17.6 23.36 21 20.28 21 16.5 21 13.42 18.58 11 15.5 11z" stroke={color} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
     </Svg>
 );
-
