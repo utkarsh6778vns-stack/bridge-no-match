@@ -9,11 +9,11 @@ import { BottomTabBar } from '../components/Community/BottomTabBar';
 const DUMMY_MATCHES = [
     {
         id: '1',
-        status: 'awaiting_you' as MatchStatus,
+        status: 'awaiting_them' as MatchStatus,
         name: 'Brooklyn',
         age: 26,
-        expiresIn: '2 hours',
-        matchDate: undefined,
+        expiresIn: undefined,
+        matchDate: 'Sep 14, 2026',
         imageUrl:
             'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=800',
         matchedByAvatars: [
@@ -21,16 +21,14 @@ const DUMMY_MATCHES = [
             'https://randomuser.me/api/portraits/women/44.jpg',
             'https://randomuser.me/api/portraits/men/46.jpg',
         ],
-        theyVotedYes: true,
+        theyVotedYes: false,
+        youVotedYes: true,
+        expiresXHours: 'Expires 12 hours',
     },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Screen
-// Figma: overall 375×812 white #FFFFFF, border-radius 35px (phone frame)
-// "Match" label: left 16, top 64, font-size 22, font-weight 600, color #010101
-// Card group: left 16, top 108, width 343, height 616
-// Bottom nav: width 375, height 72, bottom 0, border-top 1px #E9EDF5
 // ─────────────────────────────────────────────────────────────────────────────
 export default function MatchesScreen() {
     return (
@@ -66,6 +64,8 @@ export default function MatchesScreen() {
                         imageUrl={match.imageUrl}
                         matchedByAvatars={match.matchedByAvatars}
                         theyVotedYes={match.theyVotedYes}
+                        youVotedYes={match.youVotedYes}
+                        expiresXHours={match.expiresXHours}
                         onPress={() => {
                             // TODO: navigate to vote/compatibility screen
                             console.log('Card pressed — navigate to vote screen');

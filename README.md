@@ -1,25 +1,28 @@
-# Bridge - Awaiting Your Response
+# Bridge - Awaiting Their Response
 
-This is a pixel-perfect React Native (Expo) implementation of the "Awaiting Your Response" match screen for the Bridge application.
+This is a pixel-perfect React Native (Expo) implementation of the "Awaiting Their Response" match screen for the Bridge application. This variant features dual status banners and updated iconography.
 
 ## 📱 Preview
 
-![Design Screenshot](./design_screenshot.png)
+![Matched Screen](./design_screenshot.png)
 
 ## 🚀 Tech Stack
 
 - **Framework**: [Expo](https://expo.dev/) (React Native)
 - **Styling**: [NativeWind](https://www.nativewind.dev/) (Tailwind CSS)
 - **Typography**: [Outfit](https://fonts.google.com/specimen/Outfit) & [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
-- **Icons**: Custom SVG icons (Lucide-inspired)
+- **Icons**: Custom SVG icons (Vuesax/Lovely inspired overlapping hearts)
 - **Animations**: [React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)
 
 ## ✨ Features
 
-- **Pixel-Perfect UI**: Matches Figma design exactly, including typography, spacing, and colors.
-- **Premium Aesthetics**: Glassmorphism effects, smooth gradients, and curated color palettes.
-- **Backend Ready**: Clean separation of concerns with mock data that can be easily replaced by API calls.
-- **Responsive Layout**: Optimized for various mobile screen sizes with proper status bar handling.
+- **"Awaiting Their Response" State**: Specialized UI for when the user is waiting for a match's vote.
+- **Dual Status Banners**: 
+  - 🟢 "You votes yes" banner.
+  - 🟠 "You votes yes - Expires 12 hours" banner.
+- **Refined Iconography**: Custom overlapping teal hearts for the "Matched by" section.
+- **Premium Aesthetics**: Glassmorphism effects and sharp typography.
+- **Responsive Layout**: Handling of mobile status bars and navigation items.
 
 ## 🛠️ Getting Started
 
@@ -40,10 +43,9 @@ This is a pixel-perfect React Native (Expo) implementation of the "Awaiting Your
 
 ## 📂 Project Structure
 
-- `src/components/matches/MatchCard.tsx`: The main card component with all the premium styling.
-- `src/screens/MatchesScreen.tsx`: Container screen handling the layout and data flow.
-- `src/theme/colors.ts`: Centralized color tokens.
-- `src/components/Icons/Icons.tsx`: Custom SVG icons used throughout the app.
+- `src/components/matches/MatchCard.tsx`: Handles both "Awaiting Your Response" and "Awaiting Their Response" UI variants.
+- `src/screens/MatchesScreen.tsx`: Manages the screen layout and mock match data.
+- `src/components/Icons/Icons.tsx`: Custom SVG components including the new `HeartsIcon` and `QuestionIcon`.
 
 ---
 Created with ❤️ by Antigravity

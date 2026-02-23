@@ -119,11 +119,42 @@ export const ChatIcon: React.FC<IconProps> = ({ size = 24, color = '#2563EB' }) 
     </Svg>
 );
 
-export const HeartsIcon: React.FC<IconProps> = ({ size = 24, color = '#00C8B3' }) => (
-    <Svg width={size} height={size} viewBox="0 0 32 32" fill="none">
-        {/* Top Right Heart */}
-        <Path d="M22.5 6c-1.74 0-3.41.81-4.5 2.09C16.91 6.81 15.24 6 13.5 6 10.42 6 8 8.42 8 11.5c0 3.78 3.4 6.86 8.55 11.54L18 24.35l1.45-1.32C24.6 18.36 28 15.28 28 11.5 28 8.42 25.58 6 22.5 6z" stroke={color} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
-        {/* Bottom Left Heart */}
-        <Path d="M15.5 11c-1.74 0-3.41.81-4.5 2.09C9.91 11.81 8.24 11 6.5 11 3.42 11 1 13.42 1 16.5 1 20.28 4.4 23.36 9.55 28.04L11 29.35l1.45-1.32C17.6 23.36 21 20.28 21 16.5 21 13.42 18.58 11 15.5 11z" stroke={color} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+export const HeartsIcon: React.FC<IconProps> = ({ size = 24, color = '#00C8B3' }) => {
+    const heartD = "M12 20c-4.5-4-7-6.5-7-9 0-3 2-4.5 4.5-4.5 1.5 0 3 .8 4 2 1-1.2 2.5-2 4-2 2.5 0 4.5 1.5 4.5 4.5 0 2.5-2.5 5-7 9z";
+    return (
+        <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+            {/* Back Heart */}
+            <Path
+                d={heartD}
+                transform="translate(-3, -3)"
+                stroke={color}
+                strokeWidth={2.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            {/* Front Heart */}
+            <Path
+                d={heartD}
+                transform="translate(3, 3)"
+                stroke={color}
+                strokeWidth={2.5}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </Svg>
+    );
+};
+export const QuestionIcon: React.FC<IconProps> = ({ size = 24, color = '#FFFFFF' }) => (
+    <Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+        <G>
+            <Path
+                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8z"
+                fill={color}
+            />
+            <Path
+                d="M11 7h2v2h-2V7zm0 4h2v6h-2v-6z"
+                fill={color}
+            />
+        </G>
     </Svg>
 );
